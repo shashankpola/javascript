@@ -1,0 +1,205 @@
+<html>
+<head>
+<script>
+function va()
+{
+var na=new RegExp("^[A-Z][A-Za-z]*");
+var em=new RegExp("^([A-Za-z])*"+"@gmail.com");
+var c=new RegExp("^[0-9]{10}");
+var ci=new RegExp("^[A-Z][A-Za-z]*");
+var pi=new RegExp("[0-9]{6}");
+var p=new RegExp("[A-Za-z0-9]{10}");
+var st=new RegExp("^[A-Z][A-Za-z]*");
+var name=document.f1.t1.value;
+var email=document.f1.t2.value;
+var no=document.f1.t3.value;
+var pas=document.f1.pa.value;
+var city=document.f1.t4.value;
+var pin=document.f1.t5.value;
+var sta=document.f1.t6.value;
+if(na.test(name) && name!="null")
+{
+if(em.test(email) && email!="null")
+{
+if(c.test(no) && no!="null")
+{
+if(p.test(pas) && pas!="null")
+{
+if(ci.test(city) && city!="null")
+{
+if(pi.test(pin) && pin!="null")
+{
+if(st.test(sta) && sta!="null")
+{
+//window.location="reg.php";
+return true;
+}
+else
+{
+alert("invalid state");
+return false;
+}
+}
+else{
+alert("invalid pin");
+return false;
+}
+}
+else{
+alert("invalid city");
+return false;
+}
+}
+else{
+alert("invalid password");
+return false;
+
+}
+}
+else
+{
+alert("invalid no");
+return false;
+}
+}
+else
+{
+alert("invalid mail");
+return false;
+}
+}
+else
+{
+alert("invalid name");
+return false;
+}
+}
+</script>
+
+<title> Registration Form</title>
+<style>
+	h3{
+  font-family: Calibri; 
+  font-size: 25pt;         
+  font-style: normal; 
+  font-weight: bold; 
+  color:SlateBlue;
+  text-align: center; 
+  text-decoration: underline
+}
+
+table{
+  font-family: Calibri; 
+  color:white; 
+  font-size: 11pt; 
+  font-style: normal;
+  font-weight: bold;
+  text-align:; 
+  background-color: SlateBlue; 
+  border-collapse: collapse; 
+  border: 2px solid navy
+}
+table.inner{
+  border: 0px
+}
+
+</style>
+</head>
+ 
+<body id="b">
+<h3>REGISTRATION FORM</h3>
+<form name="f1" method="post" action="/" onsubmit="return va()">
+ 
+<table align="center" cellpadding = "10">
+ 
+<!----- First Name ---------------------------------------------------------->
+<tr>
+<td>NAME</td>
+<td><input type="text" name="t1" maxlength="30"/>
+(max 30 characters a-z and A-Z)
+</td>
+</tr>
+<!----- Date Of Birth -------------------------------------------------------->
+<tr>
+<td>DATE OF BIRTH</td>
+ 
+<td>
+<input type="date" name="dob"/>
+</td>
+</tr>
+ 
+<!----- Email Id ---------------------------------------------------------->
+<tr>
+<td>EMAIL ID</td>
+<td><input type="text" name="t2" maxlength="100" /></td>
+</tr>
+ 
+<!----- Mobile Number ---------------------------------------------------------->
+<tr>
+<td>MOBILE NUMBER</td>
+<td>
+<input type="text" name="t3" maxlength="10" />
+(10 digit number)
+</td>
+</tr>
+ 
+<!----- Gender ----------------------------------------------------------->
+<tr>
+<td>GENDER</td>
+<td>
+Male <input type="radio" name="ge" value="Male" />
+Female <input type="radio" name="ge" value="Female" />
+</td>
+</tr> 
+ 
+ <!----- password---------------------------------------------------------->
+<tr>
+<td>Password</td>
+<td><input type="password" name="pa" maxlength="30" />
+(max 10 characters a-z and A-Z)
+</td>
+</tr>
+
+<!----- City ---------------------------------------------------------->
+<tr>
+<td>CITY</td>
+<td><input type="text" name="t4" maxlength="30" />
+(max 30 characters a-z and A-Z)
+</td>
+</tr>
+ 
+<!----- Pin Code ---------------------------------------------------------->
+<tr>
+<td>PIN CODE</td>
+<td><input type="text" name="t5" maxlength="6" />
+(6 digit number)
+</td>
+</tr>
+ 
+<!----- State ---------------------------------------------------------->
+<tr>
+<td>STATE</td>
+<td><input type="text" name="t6" maxlength="30" />
+(max 30 characters a-z and A-Z)
+</td>
+</tr>
+ 
+<!----- Country ---------------------------------------------------------->
+<tr>
+<td>COUNTRY</td>
+<td><input type="text" name="Country" value="India" readonly="readonly" /></td>
+</tr>
+ 
+<!----- Submit and Reset ------------------------------------------------->
+<tr>
+<td colspan="2" align="center">
+<input type="submit" value="Submit" >
+<input type="reset" value="Reset">
+</td>
+</tr> 
+</table>
+ 
+</form>
+ 
+</body>
+</html>
